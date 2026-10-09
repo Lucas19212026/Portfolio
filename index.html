@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Carvalho - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        
+        (function () {
+            var tema = null;
+            try { tema = localStorage.getItem("tema"); } catch (e) {}
+            if (tema !== "claro" && tema !== "escuro") {
+                tema = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "claro" : "escuro";
+            }
+            document.documentElement.setAttribute("data-tema", tema);
+        })();
+    </script>
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <img class="logo" src="LogoLPC.jpeg" alt="Logo LPC">
+            <a href="#home">Home</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#competencias">Competências</a>
+            <a href="#projetos">Meus projetos</a>
+            <a href="#contato">Entre em contato</a>
+            <button id="tema" type="button" aria-label="Alternar entre modo claro e escuro">
+                <span id="tema-icone">☀</span>
+                <span id="tema-texto">Modo claro</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <section id="home">
+            <div class="home-nome">
+                <h1 id="nome">
+                    <span class="linha linha1">Lucas</span>
+                    <span class="linha linha2">Carvalho</span>
+                </h1>
+            </div>
+            <img class="home-foto" src="FotoInicio.jpeg" alt="Foto de Lucas Carvalho">
+        </section>
+
+
+        <section id="sobre">
+            <div class="cartao-branco">
+                <div class="titulo">
+                    <h2>SOBRE MIM</h2>
+                    <div class="linha-titulo"><span></span><b>//</b><span></span></div>
+                </div>
+                <div class="sobre-conteudo">
+                    <p>
+                        Olá, me chamo Lucas Carvalho, sou estudante do Cotemig,
+                        atualmente estou cursando o segundo ano do ensino médio.
+                        Gosto muito com programação back-end. Comecei a me interessar
+                        nessa área há uns anos. Também gosto de fazer edição de
+                        vídeos e criar imagens.
+                    </p>
+                    <img src="FotoComp.jpeg" alt="Foto de Lucas Carvalho">
+                </div>
+            </div>
+        </section>
+
+        <section id="competencias">
+            <div class="painel">
+                <div class="titulo titulo-escuro">
+                    <h2>COMPETÊNCIAS E QUALIFICAÇÕES</h2>
+                    <div class="linha-titulo"><span></span><b>//</b><span></span></div>
+                </div>
+
+                <div class="cartas">
+                    <div class="carta">
+                        <h3>•Programação C#</h3>
+                        <p class="detalhe">Desenvolvimento de programas e lógica de programação com C#.</p>
+                    </div>
+                    <div class="carta">
+                        <h3>•HTML/CSS</h3>
+                        <p class="detalhe">Criação e estilização de páginas web, como este portfólio.</p>
+                    </div>
+                    <div class="carta">
+                        <h3>•My SQL</h3>
+                        <p class="detalhe">Criação e consulta de bancos de dados.</p>
+                    </div>
+                    <div class="carta">
+                        <h3>•Virtual box</h3>
+                        <p class="detalhe">Uso de máquinas virtuais para testar sistemas.</p>
+                    </div>
+                    <div class="carta">
+                        <h3>1º Lugar - Concurso de Redação</h3>
+                        <p class="detalhe">Primeiro lugar em um concurso de redação.</p>
+                    </div>
+                    <div class="carta">
+                        <h3>2º lugar - Concurso de Inglês</h3>
+                        <p class="detalhe">Segundo lugar em um concurso de inglês.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projetos">
+            <div class="painel">
+                <div class="titulo titulo-escuro">
+                    <h2>MEUS PROJETOS</h2>
+                    <div class="linha-titulo"><span></span><b>//</b><span></span></div>
+                </div>
+
+                <div class="projetos">
+                    <div class="projeto p1">
+                        <h3>Site Tabela Periódica</h3>
+                        <div class="caixa"><img src="TabelaPeriodica.png" alt="Site Tabela Periódica"></div>
+                    </div>
+                    <div class="projeto p2">
+                        <h3>Criação de site de loja</h3>
+                        <div class="caixa"><img src="Siteloja.png" alt="Site de loja"></div>
+                    </div>
+                    <div class="projeto p3">
+                        <h3>Site de Marca E-Commerce</h3>
+                        <div class="caixa cinza">
+                            <a href="https://lucas19212026.github.io/SiteFigmaECommerce/" target="_blank">https://lucas19212026.github.io/SiteFigmaECommerce/</a>
+                        </div>
+                    </div>
+                    <div class="projeto p4">
+                        <h3>Landing Page</h3>
+                        <div class="caixa cinza">
+                            <a href="https://lucas19212026.github.io/figmalandingpage/" target="_blank">https://lucas19212026.github.io/figmalandingpage/</a>
+                        </div>
+                    </div>
+                    <div class="projeto p5">
+                        <h3>Site Futebol</h3>
+                        <div class="caixa cinza">
+                            <span>EM PROGRESSO...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contato">
+            <div class="painel painel-contato">
+                <div class="titulo titulo-contato">
+                    <h2>ENTRE EM CONTATO</h2>
+                </div>
+
+                <div class="contato-caixa">
+                    <div class="contato-esquerda">
+                        <label for="mensagem">MENSAGEM:</label>
+                        <textarea id="mensagem"></textarea>
+                        <button id="enviar">ENVIAR</button>
+                        <p id="aviso"></p>
+                    </div>
+
+                    <div class="contato-direita">
+                        <label for="nome-campo">NOME:</label>
+                        <input type="text" id="nome-campo">
+                        <label for="email">E-MAIL:</label>
+                        <input type="text" id="email">
+
+                        <p class="redes-titulo">REDES SOCIAIS</p>
+                        <div class="rede"><img src="instagram.png" alt="Instagram"><span>INSTAGRAM</span></div>
+                        <div class="rede"><img src="facebook.png" alt="Facebook"><span>FACEBOOK</span></div>
+                        <div class="rede"><img src="twitter.png" alt="Twitter"><span>TWITTER</span></div>
+                        <div class="rede">
+                            <img src="github.png" alt="GitHub">
+                            <a href="https://github.com/Lucas19212026/SiteFigma" target="_blank">https://github.com/Lucas19212026/SiteFigma</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="telefone">
+                    <img src="chamada-telefonica.png" alt="Telefone">
+                    <span>TELEFONE</span>
+                </div>
+                <p>TODOS OS DIREITOS RESERVADOS</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
